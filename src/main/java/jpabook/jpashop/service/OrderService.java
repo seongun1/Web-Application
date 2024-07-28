@@ -8,6 +8,7 @@ import jpabook.japshop.domain.item.Item;
 import jpabook.japshop.repository.ItemRepository;
 import jpabook.japshop.repository.MemberRepository;
 import jpabook.japshop.repository.OrderRepository;
+import jpabook.japshop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,7 +33,7 @@ public class OrderService {
 
         // 배송정보 생성
         Delivery delivery = new Delivery();
-        delivery.setAddress(member.getAdress());
+        delivery.setAddress(member.getAddress());
 
         // 주문상품 생성
         OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
@@ -53,8 +54,8 @@ public class OrderService {
         order.cancel();
     }
 
-//    //검색
-//    public List<Order> findOrders(OrderSearch orderSearch){
-//        return orderRepository.findAll(orderSearch);
-//    }
+    //검색
+    public List<Order> findOrders(OrderSearch orderSearch){
+        return orderRepository.findAllByString(orderSearch);
+    }
 }

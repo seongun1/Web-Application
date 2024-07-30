@@ -1,4 +1,4 @@
-package jpabook.japshop.service;
+package jpabook.jpashop.service;
 
 public class UpdateItemDto {
 }

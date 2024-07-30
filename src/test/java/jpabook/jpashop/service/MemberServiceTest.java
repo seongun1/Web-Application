@@ -1,9 +1,8 @@
-package jpabook.japshop.service;
+package jpabook.jpashop.service;
 
 import jakarta.persistence.EntityManager;
-import jpabook.japshop.domain.Member;
-import jpabook.japshop.repository.MemberRepository;
-import org.junit.Assert;
+import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class MemberServiceTest {
     @Autowired MemberRepository memberRepository;
     @Autowired EntityManager em;
     @Test
-    //@Rollback(value = false) --> 눈으로 확인해 보고 싶을때
+    //@Rollback(false)// --> 눈으로 확인해 보고 싶을때
     public void 회원가입() throws Exception {
         //given
         Member member = new Member();

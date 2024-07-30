@@ -1,9 +1,9 @@
-package jpabook.japshop.repository;
+package jpabook.jpashop.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
-import jpabook.japshop.domain.Order;
+import jpabook.jpashop.domain.Order;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

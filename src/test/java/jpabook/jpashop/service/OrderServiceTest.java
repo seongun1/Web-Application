@@ -1,14 +1,14 @@
-package jpabook.japshop.service;
+package jpabook.jpashop.service;
 
 import jakarta.persistence.EntityManager;
-import jpabook.japshop.domain.Address;
-import jpabook.japshop.domain.Exception.NotEnoughStockException;
-import jpabook.japshop.domain.Member;
-import jpabook.japshop.domain.Order;
-import jpabook.japshop.domain.OrderStatus;
-import jpabook.japshop.domain.item.Book;
-import jpabook.japshop.domain.item.Item;
-import jpabook.japshop.repository.OrderRepository;
+import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.Exception.NotEnoughStockException;
+import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderStatus;
+import jpabook.jpashop.domain.item.Book;
+import jpabook.jpashop.domain.item.Item;
+import jpabook.jpashop.repository.OrderRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,7 +76,7 @@ public class OrderServiceTest {
 
         //then
         Order getOrder = orderRepository.findOne(orderId);
-        assertEquals("주문 취소시 상태는 CANCEL 이다.",OrderStatus.CANCLE,getOrder.getStatus());
+        assertEquals("주문 취소시 상태는 CANCEL 이다.",OrderStatus.CANCEL,getOrder.getStatus());
         assertEquals("주문이 취소된 상품은 그만큼 재고가 증가해야 한다.",10,item.getStockQuantity());
     }
 
@@ -92,7 +92,7 @@ public class OrderServiceTest {
     private Member createMember() {
         Member member = new Member();
         member.setName("회원1");
-        member.setAdress(new Address("서울","강가","123-123"));
+        member.setAddress(new Address("서울","강가","123-123"));
         em.persist(member);
         return member;
     }

@@ -1,14 +1,8 @@
-package jpabook.japshop.repository;
+package jpabook.jpashop.repository;
 
-import jakarta.persistence.EntityManager;
-import jpabook.japshop.domain.Order;
-import jpabook.japshop.domain.OrderItem;
-import jpabook.japshop.domain.OrderStatus;
+import jpabook.jpashop.domain.OrderStatus;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter@Setter
 public class OrderSearch {
